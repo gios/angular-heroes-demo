@@ -1,4 +1,4 @@
-System.register(['angular2/core'], function(exports_1, context_1) {
+System.register(["angular2/core"], function(exports_1, context_1) {
     "use strict";
     var __moduleName = context_1 && context_1.id;
     var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -20,11 +20,16 @@ System.register(['angular2/core'], function(exports_1, context_1) {
         execute: function() {
             AppComponent = (function () {
                 function AppComponent() {
+                    this.title = "Tour of heroes";
+                    this.hero = {
+                        id: 1,
+                        name: "Windstorm",
+                    };
                 }
                 AppComponent = __decorate([
                     core_1.Component({
-                        selector: 'my-app',
-                        template: "<h2>My First Angular 2 App</h2>"
+                        selector: "my-app",
+                        template: "<h1>{{title}}</h1><h2>{{hero.name}} details!</h2>",
                     }), 
                     __metadata('design:paramtypes', [])
                 ], AppComponent);
