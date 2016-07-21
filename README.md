@@ -1,3 +1,3 @@
 # Angular Heroes Demo
-* Typescript
+* TypeScript
 * Angular 2
