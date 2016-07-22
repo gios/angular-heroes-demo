@@ -79,7 +79,7 @@ export class AppComponent implements OnInit {
   }
 
   public getHeroes() {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroesSlowly().then(heroes => this.heroes = heroes);
   }
 
   public ngOnInit() {
