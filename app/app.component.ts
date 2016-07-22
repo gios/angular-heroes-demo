@@ -67,7 +67,7 @@ import { Component, OnInit } from "@angular/core";
     <my-hero-detail [hero]="selectedHero"></my-hero-detail>
   `,
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   public title = "Tour of Heroes";
   public heroes: Hero[];
   public selectedHero: Hero;
