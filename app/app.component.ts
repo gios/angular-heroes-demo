@@ -6,6 +6,7 @@ import { ROUTER_DIRECTIVES } from "@angular/router";
   directives: [ROUTER_DIRECTIVES],
   providers: [HeroService],
   selector: "my-app",
+  styleUrls: ["app/app.component.css"],
   template: `
     <h1>{{title}}</h1>
     <nav>
