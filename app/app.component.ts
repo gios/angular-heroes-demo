@@ -1,6 +1,7 @@
 import { HeroService } from "./hero.service";
 import { Component } from "@angular/core";
 import { ROUTER_DIRECTIVES } from "@angular/router";
+import "./rxjs-extensions";
 
 @Component({
   directives: [ROUTER_DIRECTIVES],
