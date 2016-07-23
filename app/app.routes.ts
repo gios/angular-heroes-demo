@@ -1,4 +1,5 @@
 import { DashboardComponent } from "./dashboard.component";
+import { HeroDetailComponent } from "./hero-detail.component";
 import { HeroesComponent } from "./heroes.component";
 import { RouterConfig, provideRouter } from "@angular/router";
 
@@ -15,6 +16,10 @@ const routes: RouterConfig = [
     path: "",
     pathMatch: "full",
     redirectTo: "/dashboard",
+  },
+  {
+    component: HeroDetailComponent,
+    path: "detail/:id",
   },
 ];
 

@@ -1,20 +1,37 @@
 import { Hero } from "./hero";
-import { Component, Input } from "@angular/core";
+import { HeroService } from "./hero.service";
+import { Component, Input, OnDestroy, OnInit } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+
 
 @Component({
   selector: "my-hero-detail",
-  template: `
-    <div *ngIf="hero">
-      <h2>{{hero.name}} details!</h2>
-      <div><label>id: </label>{{hero.id}}</div>
-      <div>
-        <label>name: </label>
-        <input [(ngModel)]="hero.name" placeholder="name"/>
-      </div>
-      </div>
-  `,
+  templateUrl: "app/hero-detail.component.html",
 })
-export class HeroDetailComponent {
+export class HeroDetailComponent implements OnInit, OnDestroy {
   @Input()
   public hero: Hero;
+  public sub: any;
+
+  constructor(
+    private heroService: HeroService,
+    private route: ActivatedRoute) {
+  }
+
+  public ngOnInit() {
+    this.sub = this.route.params.subscribe(params => {
+      let idType = "id";
+      let id = +params[idType];
+      this.heroService.getHero(id)
+        .then(hero => this.hero = hero);
+    });
+  }
+
+  public ngOnDestroy() {
+    this.sub.unsubscribe();
+  }
+
+  public goBack() {
+    window.history.back();
+  }
 }
